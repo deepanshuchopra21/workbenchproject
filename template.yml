@@ -21,10 +21,10 @@ Resources:
         GetEvent:
           Type: Api
           Properties:
-            Path: /
+            Path: /test
             Method: get
         PostEvent:
           Type: Api
           Properties:
-            Path: /
+            Path: /test
             Method: post

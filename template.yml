@@ -34,14 +34,4 @@ Resources:
       FunctionName: !Ref workbenchlambdatestmethod
       Name: Dev
       FunctionVersion: $LATEST
-  workbenchlambdatestmethodstgversion:
-    Type: AWS::Lambda::Version
-    Properties:
-      FunctionName: !Ref workbenchlambdatestmethod
-      Description: First version of workbenchlambdatestmethod
-  workbenchlambdatestmethodstgalias:
-    Type: AWS::Lambda::Alias
-    Properties:
-      FunctionName: !Ref workbenchlambdatestmethod
-      Name: Stg
-      FunctionVersion: !GetAtt workbenchlambdatestmethodstgversion.Version
+  

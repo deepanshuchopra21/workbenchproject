@@ -10,17 +10,15 @@ Parameters:
 
 Resources:
   workbenchlambdatestmethod:
-    Type: "AWS::Lambda::Function"
-    Properties: 
-      Handler: "index.handler"
-      Runtime: "python2.7"
-      Role: 
+    Type: AWS::Serverless::Function
+    Properties:
+      Handler: index.handler
+      Runtime: python2.7
+      Timeout: 25
+      Memory: 512
+      Role:
         Fn::ImportValue:
-          !Join ['-', [!Ref 'ProjectId', !Ref 'AWS::Region', 'LambdaTrustRole']]      
-      Timeout: "30"
-      TracingConfig:
-        Mode: "Active"
-      MemorySize: "512"
+          !Join ['-', [!Ref 'ProjectId', !Ref 'AWS::Region', 'LambdaTrustRole']]
       Events:
         GetEvent:
           Type: Api

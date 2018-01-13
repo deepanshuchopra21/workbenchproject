@@ -50,7 +50,7 @@ Resources:
     Properties:
       FunctionName: !Ref workbenchlambdatestmethod
       Name: qa
-      FunctionVersion:  !GetAtt workbenchlambdatestdevalias.Version
+      FunctionVersion: !GetAtt workbenchlambdatestqaversion.Version
 
 
   

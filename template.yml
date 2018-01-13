@@ -40,5 +40,17 @@ Resources:
       FunctionName: !Ref workbenchlambdatestmethod
       Name: Dev
       FunctionVersion: $LATEST
+  workbenchlambdatestqaversion:
+    Type: AWS::Lambda::Version
+    Properties:
+      FunctionName: !Ref workbenchlambdatestmethod
+      Description: First version of workbenchlambdatestmethod
+  workbenchlambdatestQaAlias:
+    Type: AWS::Lambda::Alias
+    Properties:
+      FunctionName: !Ref workbenchlambdatestmethod
+      Name: qa
+      FunctionVersion:  !GetAtt workbenchlambdatestdevalias.Version
+
 
   

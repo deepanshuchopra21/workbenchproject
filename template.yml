@@ -10,7 +10,7 @@ Parameters:
 
 Resources:
   workbenchlambdatestmethod:
-    Name: workbench-lambdatestmethod
+    FunctionName: workbench-lambdatestmethod
     Type: AWS::Serverless::Function
     Properties:
       Handler: index.handler

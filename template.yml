@@ -37,11 +37,5 @@ Resources:
           Properties:
             Path: /MyResource
             Method: ANY
-      VpcConfig:
-        SecurityGroupIds:
-          - sg-bcd90bcd
-        SubnetIds:
-          - subnet-0d0aa257
-          - subnet-c5cfa68d
       Tags:
         ZS_PROJECT_CODE: 9904ZS3603

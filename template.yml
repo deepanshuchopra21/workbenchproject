@@ -18,13 +18,25 @@ Resources:
       Description: 'This lambda is used to create projects in workbench '
       MemorySize: 3008
       Timeout: 300
-      Role: 'arn:aws:iam::783005340583:role/aws-a0022-glbl-00-d-rol-shrd-awb-lambda01'
+      Role:
+        Fn::ImportValue:
+          !Join ['-', [!Ref 'ProjectId', !Ref 'AWS::Region', 'LambdaTrustRole']]
       Events:
         Api1:
           Type: Api
           Properties:
             Path: /MyResource
-            Method: Get
+            Method: ANY
+        Api2:
+          Type: Api
+          Properties:
+            Path: /MyResource
+            Method: ANY
+        Api3:
+          Type: Api
+          Properties:
+            Path: /MyResource
+            Method: ANY
       VpcConfig:
         SecurityGroupIds:
           - sg-bcd90bcd

@@ -14,8 +14,8 @@ Resources:
     Properties:
       Handler: index.handler
       Runtime: python2.7
-      Timeout: 25
-      MemorySize: 512
+      MemorySize: 3008
+      Timeout: 300
       Role:
         Fn::ImportValue:
           !Join ['-', [!Ref 'ProjectId', !Ref 'AWS::Region', 'LambdaTrustRole']]
@@ -30,7 +30,7 @@ Resources:
           Properties:
             Path: /test
             Method: post
-            
-            
+      Tags:
+        ZS_PROJECT_CODE: 9904ZS3603            
   
   

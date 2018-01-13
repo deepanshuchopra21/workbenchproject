@@ -9,7 +9,8 @@ Parameters:
     Description: CodeStar projectId used to associate new resources to team members
 
 Resources:
-  workbench-lambdatestmethod:
+  workbenchlambdatestmethod:
+    Name: workbench-lambdatestmethod
     Type: AWS::Serverless::Function
     Properties:
       Handler: index.handler

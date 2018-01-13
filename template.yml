@@ -10,32 +10,27 @@ Parameters:
 
 Resources:
   workbenchlambdatestmethod:
-    Type: 'AWS::Serverless::Function'
+    Type: AWS::Serverless::Function
     Properties:
-      Handler: Index.lambda_handler_add_project
+      Handler: index.handler
       Runtime: python2.7
-      CodeUri: .
-      Description: 'This lambda is used to create projects in workbench '
-      MemorySize: 3008
-      Timeout: 300
+      Timeout: 25
+      Memory: 512
       Role:
         Fn::ImportValue:
           !Join ['-', [!Ref 'ProjectId', !Ref 'AWS::Region', 'LambdaTrustRole']]
       Events:
-        Api1:
+        GetEvent:
           Type: Api
           Properties:
-            Path: /MyResource
-            Method: ANY
-        Api2:
+            Path: /test
+            Method: get
+        PostEvent:
           Type: Api
           Properties:
-            Path: /MyResource
-            Method: ANY
-        Api3:
-          Type: Api
-          Properties:
-            Path: /MyResource
-            Method: ANY
-      Tags:
-        ZS_PROJECT_CODE: 9904ZS3603
+            Path: /test
+            Method: post
+            
+            
+  
+  
